@@ -1,0 +1,136 @@
+@import "../../styles";
+
+#waste-list {
+
+  mat-card{
+    background-color: white;
+    color:$main-green-darker;
+    padding-top:0!important;
+  }
+  li{
+    padding: 5px 5px 5px 10px;
+    border-radius: 15px;
+  }
+
+  button {
+    color:white;
+    background-color: $main-blue;
+  }
+}
+
+#add_circle_button {
+  float:right;
+}
+
+.list{
+  margin: 0;
+  padding: 30px;
+  cursor: move;
+  left: 20px;
+  top: 100px;
+}
+
+mat-card#list.mat-card{
+  padding-top:0!important;
+  mat-card-title{
+    padding-top:15px!important;
+  }
+  mat-expansion-panel{
+    margin-bottom:10px;
+  }
+}
+
+#deleteButton {
+  float:right;
+}
+
+.showed {
+  left: 0 !important;
+  -webkit-animation-name: slideIn !important;
+  -webkit-animation-duration: 1.5s !important;
+  animation-name: slideIn !important;
+  animation-duration: 1.5s !important;
+}
+
+.hidden{
+    left: -400px !important;
+    -webkit-animation-name: slideOut !important;
+    -webkit-animation-duration: 1.5s !important;
+    animation-name: slideOut !important;
+    animation-duration: 1.5s !important;
+}
+
+#mobileListHeader {
+  padding-bottom: 30px;
+}
+
+.remove{
+  float: right;
+  color: $main-blue;
+  position: relative;
+  padding-right:7px;
+  bottom:2px;
+}
+
+.articleIsMobiletrue{
+  width: 80%;
+  position: fixed;
+  bottom: -145px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  mat-form-field{
+    padding-top: 15px;
+    width:100%!important;
+  }
+  button{
+    width: 100%;
+    font-size: 150%;
+  }
+  .mobileButton{
+    width: 100%;
+    background-color: white !important;
+    color: $main-blue !important;
+    border: none !important;
+
+    padding: 15px;
+  }
+  #deleteButton{
+    visibility: hidden;
+  }
+  #mobileSend {
+    margin-top: 8px;
+  }
+}
+
+#inputfieldlist {
+  width: 70%;
+}
+
+@media only screen and (max-width: 500px) {
+    #add-circle-buton {
+      color:red;
+    }
+}
+
+/* Add Animation */
+@-webkit-keyframes slideOut {
+    from {left: 0}
+    to {left: -400px}
+}
+
+@keyframes slideOut {
+    from {left: 0}
+    to {left: -400px}
+}
+
+@-webkit-keyframes slideIn {
+    from {left: -400px}
+    to {left: 0}
+}
+
+@keyframes slideIn {
+    from {left: -400px}
+    to {left: 0}
+}
