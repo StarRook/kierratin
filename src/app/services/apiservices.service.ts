@@ -47,6 +47,9 @@ export class ApiservicesService {
   // Onko roskalista mobiililla piilotettu
   listMobileHidden = true;
 
+  // Onko roskalista desktopilla piilotettu
+  listDesktopHidden = false;
+
   infoWind = null;
 
   constructor(private http: HttpClient) {}
@@ -218,20 +221,23 @@ export class ApiservicesService {
   }
   // piilottaa listan...
   hideList() {
+    const article = document.getElementById('waste-list');
     if (this.isItMobile()) {
-      const article = document.getElementById('waste-list');
       if (this.listMobileHidden) {
-        article.style.bottom = '0';
+          article.style.bottom = '0';
       } else {
-        const articleHeight = article.offsetHeight - 60;
-        article.style.bottom = '-' + articleHeight + 'px';
+          const articleHeight = article.offsetHeight - 60;
+          article.style.bottom = '-' + articleHeight + 'px';
       }
       this.listMobileHidden = !this.listMobileHidden;
     } else {
-      const list = document.getElementById('list');
-      // vaihdetaan luokkaa
-      list.classList.toggle('hidden');
-      list.classList.toggle('showed');
+      if (this.listDesktopHidden) {
+          article.style.left = '0';
+      } else {
+          const articleWidth = article.offsetWidth;
+          article.style.left = '-' + articleWidth + 'px';
+      }
+      this.listDesktopHidden = !this.listDesktopHidden;
     }
   }
 }
