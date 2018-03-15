@@ -88,6 +88,7 @@ export class ListComponent implements OnInit {
     // this.trashArray.splice()
   }}
   this.sendListToService();
+  this.sendRecyclingTypes();
 }
 
 }
