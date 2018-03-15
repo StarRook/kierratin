@@ -12,7 +12,6 @@ import {MapComponent} from '../map/map.component';
 })
 export class ListComponent implements OnInit {
 
-  left: 50;
   myControl: FormControl = new FormControl();
   trashArray = [
   ];
